@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual SCWeb — Guia Rápido</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1a3a5c;
+    --azul-claro: #e8f1f8;
+    --borda: #dce3ea;
+    --texto: #1c2b3a;
+    --muted: #5a6e80;
+    --accent: #0e7fc0;
+    --verde: #0f7b55;
+    --verde-claro: #e6f4ef;
+    --amarelo: #92600a;
+    --amarelo-claro: #fff8e1;
+    --cinza: #f5f6f7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--texto);
+    background: #fafbfc;
+    line-height: 1.75;
+  }
+
+  header {
+    background: var(--azul);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+  }
+
+  header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.4rem;
+  }
+
+  header .subtitulo {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 300;
+  }
+
+  header .badge {
+    display: inline-block;
+    margin-top: 1rem;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 18px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+
+  .intro-bar {
+    background: var(--verde-claro);
+    border-left: 4px solid var(--verde);
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--verde);
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* Índice */
+  .indice {
+    background: var(--azul-claro);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .indice h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--azul);
+    margin-bottom: 1rem;
+    font-weight: normal;
+  }
+
+  .indice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .indice-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 0.88rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+  .indice-item:hover { background: rgba(14,127,192,0.08); }
+
+  .indice-num {
+    background: var(--azul);
+    color: white;
+    font-size: 0.72rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+
+  /* Fluxo do dia */
+  .fluxo {
+    background: var(--azul);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3.5rem;
+    color: white;
+  }
+
+  .fluxo h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 1.2rem;
+    font-weight: normal;
+  }
+
+  .fluxo-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .fluxo-step {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .fluxo-arrow {
+    opacity: 0.5;
+    font-size: 1rem;
+  }
+
+  /* Seções */
+  .secao {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 2rem;
+  }
+
+  .secao-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--azul-claro);
+  }
+
+  .secao-num {
+    background: var(--accent);
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .secao-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--azul);
+    font-weight: normal;
+  }
+
+  .secao-header .emoji {
+    font-size: 1.4rem;
+  }
+
+  /* Receita */
+  .receita {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .receita-passos {
+    padding: 1.5rem;
+  }
+
+  .passo {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .passo:last-child { margin-bottom: 0; }
+
+  .passo-num {
+    background: var(--azul-claro);
+    color: var(--azul);
+    font-weight: 600;
+    font-size: 0.85rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .passo-texto {
+    font-size: 0.95rem;
+    padding-top: 2px;
+  }
+
+  .passo-texto strong {
+    color: var(--azul);
+    font-weight: 500;
+  }
+
+  /* Dica */
+  .dica {
+    background: var(--amarelo-claro);
+    border-left: 3px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    font-size: 0.87rem;
+    color: var(--amarelo);
+    margin: 1rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .dica strong { font-weight: 600; }
+
+  /* Campos */
+  .campos {
+    background: var(--cinza);
+    border-top: 1px solid var(--borda);
+    padding: 1rem 1.5rem;
+  }
+
+  .campos-titulo {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+  }
+
+  .campos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .campo-tag {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .campo-tag.obrigatorio {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--azul-claro);
+  }
+
+  /* Atalhos */
+  .atalhos {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .atalho-linha {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--cinza);
+    font-size: 0.93rem;
+  }
+
+  .atalho-linha:last-child { border-bottom: none; }
+
+  .atalho-icone {
+    font-size: 1.2rem;
+    width: 28px;
+    flex-shrink: 0;
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  kbd {
+    background: var(--cinza);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    color: var(--texto);
+  }
+
+  .rodape {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--azul-claro);
+    text-align: center;
+    font-size: 0.83rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .fluxo-steps { flex-direction: column; align-items: flex-start; }
+    .fluxo-arrow { display: none; }
+  }
+
+  @media print {
+    header { background: var(--azul) !important; -webkit-print-color-adjust: exact; }
+    body { background: white; }
+    .secao { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SCWeb</div>
+  <div class="subtitulo">Guia Rápido de Uso — Para o Médico</div>
+  <div class="badge">Receita de bolo · Passo a passo</div>
+</header>
+
+<div class="intro-bar">
+  Cada seção abaixo é uma tarefa completa. Siga os passos em ordem e não erra.
+</div>
+
+<div class="container">
+
+  <!-- Índice -->
+  <div class="indice">
+    <h2>O que você encontra aqui</h2>
+    <div class="indice-grid">
+      <a href="#s1" class="indice-item"><span class="indice-num">1</span> Cadastrar paciente</a>
+      <a href="#s2" class="indice-item"><span class="indice-num">2</span> Agendar consulta</a>
+      <a href="#s3" class="indice-item"><span class="indice-num">3</span> Sala de espera</a>
+      <a href="#s4" class="indice-item"><span class="indice-num">4</span> Prontuário</a>
+      <a href="#s5" class="indice-item"><span class="indice-num">5</span> Receita médica</a>
+      <a href="#s6" class="indice-item"><span class="indice-num">6</span> Atestado</a>
+      <a href="#s7" class="indice-item"><span class="indice-num">7</span> Laudos e exames</a>
+      <a href="#s8" class="indice-item"><span class="indice-num">8</span> Recibo e pagamento</a>
+      <a href="#s9" class="indice-item"><span class="indice-num">9</span> Lembretes</a>
+    </div>
+  </div>
+
+  <!-- Fluxo do dia -->
+  <div class="fluxo">
+    <h2>Fluxo típico de um dia de atendimento</h2>
+    <div class="fluxo-steps">
+      <div class="fluxo-step">📋 Cadastrar paciente</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">📅 Agendar</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">🚪 Sala de espera</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">📝 Prontuário</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">💊 Receita</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">💰 Recibo</div>
+    </div>
+  </div>
+
+  <!-- 1. Cadastrar paciente -->
+  <div class="secao" id="s1">
+    <div class="secao-header">
+      <div class="secao-num">1</div>
+      <span class="emoji">👤</span>
+      <h2>Cadastrar uma nova paciente</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Pacientes</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique no botão <strong>Nova Paciente</strong> (canto superior direito).</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Preencha os campos obrigatórios: <strong>nome completo</strong>, <strong>data de nascimento</strong> e <strong>telefone</strong>. A idade é calculada automaticamente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Digite o <strong>CEP</strong> — o endereço é preenchido automaticamente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong>. A paciente já aparece na lista.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Dica:</strong> Paciente que já veio antes? Pesquise pelo nome na barra de busca antes de cadastrar para evitar duplicatas.
+      </div>
+      <div class="campos">
+        <div class="campos-titulo">Campos do cadastro</div>
+        <div class="campos-lista">
+          <span class="campo-tag obrigatorio">Nome ✱</span>
+          <span class="campo-tag obrigatorio">Data de nascimento ✱</span>
+          <span class="campo-tag obrigatorio">Telefone ✱</span>
+          <span class="campo-tag">CPF</span>
+          <span class="campo-tag">Estado civil</span>
+          <span class="campo-tag">CEP / Endereço</span>
+          <span class="campo-tag">Convênio</span>
+          <span class="campo-tag">E-mail</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Agendar consulta -->
+  <div class="secao" id="s2">
+    <div class="secao-header">
+      <div class="secao-num">2</div>
+      <span class="emoji">📅</span>
+      <h2>Agendar uma consulta</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Agenda</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Navegue até o dia desejado usando as setas de semana.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Clique no horário disponível ou no botão <strong>Novo Agendamento</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Pesquise e selecione a <strong>paciente</strong> pelo nome.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Confirme a data e o horário. Adicione uma observação se quiser.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">6</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong>. O agendamento aparece no calendário.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Lembrete automático:</strong> o sistema envia mensagem de lembrete pelo WhatsApp 1 dia antes da consulta — nenhuma ação necessária da sua parte.
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sala de espera -->
+  <div class="secao" id="s3">
+    <div class="secao-header">
+      <div class="secao-num">3</div>
+      <span class="emoji">🚪</span>
+      <h2>Gerenciar a sala de espera</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Sala de Espera</strong>. Você vê todas as pacientes do dia e seus status.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Quando a paciente chegar, a recepção muda o status para <strong>Aguardando</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Quando você chamar a paciente, clique em <strong>Em atendimento</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Ao terminar o atendimento, clique em <strong>Concluído</strong>.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Dica:</strong> A ordem na sala de espera reflete a ordem de chegada. A recepção e o médico veem a mesma tela em tempo real.
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Prontuário -->
+  <div class="secao" id="s4">
+    <div class="secao-header">
+      <div class="secao-num">4</div>
+      <span class="emoji">📝</span>
+      <h2>Registrar a consulta no prontuário</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">Acesse o <strong>Prontuário</strong> pela Sala de Espera (clique no nome da paciente) ou pelo menu Pacientes → selecione a paciente → Prontuário.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Nova Consulta</strong> para abrir o registro do dia.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Preencha os campos do exame físico. Use os <strong>textos rápidos</strong> para achados normais — assim você não digita tudo do zero.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Para pacientes obstétricas, informe a <strong>DUM</strong> ou os dados da USG — a idade gestacional é calculada automaticamente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Preencha <strong>hipótese diagnóstica</strong> e <strong>conduta</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">6</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong>. O prontuário fica no histórico da paciente para sempre.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Importante:</strong> o prontuário é de sua responsabilidade legal. Pelo CFM, deve ser mantido por no mínimo 20 anos. O sistema guarda tudo automaticamente — não apague registros.
+      </div>
+      <div class="campos">
+        <div class="campos-titulo">Campos do prontuário</div>
+        <div class="campos-lista">
+          <span class="campo-tag">Queixa principal</span>
+          <span class="campo-tag">História da moléstia</span>
+          <span class="campo-tag">Sinais vitais</span>
+          <span class="campo-tag">Exame físico</span>
+          <span class="campo-tag">Antecedentes</span>
+          <span class="campo-tag">Medicamentos em uso</span>
+          <span class="campo-tag">Alergias</span>
+          <span class="campo-tag">Hipótese diagnóstica</span>
+          <span class="campo-tag">Conduta</span>
+          <span class="campo-tag">Retorno</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Receita -->
+  <div class="secao" id="s5">
+    <div class="secao-header">
+      <div class="secao-num">5</div>
+      <span class="emoji">💊</span>
+      <h2>Emitir receita médica</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Receituário</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Nova Receita</strong> e selecione a paciente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Adicione cada medicamento: <strong>nome</strong>, <strong>dose</strong>, <strong>posologia</strong>, <strong>quantidade</strong> e via de administração.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Clique em <strong>Visualizar</strong> para conferir o documento antes de assinar.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Clique em <strong>Assinar com Bird ID</strong>. O app Bird ID abre no celular — confirme a assinatura.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">6</div>
+          <div class="passo-texto">Após assinado, clique em <strong>Imprimir</strong> ou envie o PDF diretamente para a paciente.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Bird ID:</strong> é o app do seu certificado digital ICP-Brasil. Precisa estar instalado no celular e com certificado válido para assinar. Sem assinatura, a receita não tem validade jurídica.
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Atestado -->
+  <div class="secao" id="s6">
+    <div class="secao-header">
+      <div class="secao-num">6</div>
+      <span class="emoji">📄</span>
+      <h2>Emitir atestado médico</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Documentos</strong> → <strong>Atestados</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Novo Atestado</strong> e selecione a paciente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Informe o <strong>CID</strong> (opcional), o <strong>número de dias</strong> de afastamento e a data.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Para declarações de comparecimento ou documentos livres, escolha <strong>Declaração</strong> e digite o texto.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong> e depois em <strong>Imprimir</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Laudos -->
+  <div class="secao" id="s7">
+    <div class="secao-header">
+      <div class="secao-num">7</div>
+      <span class="emoji">🔬</span>
+      <h2>Registrar laudos e exames</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Laudos</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Novo Laudo</strong> e escolha o tipo: USG 1.º trimestre, USG morfológica, Colposcopia, Hemograma, etc.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Selecione a paciente e preencha os campos do exame.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Para USG obstétrica: informe as medidas (CCN, DBP, CA, CF…) — a <strong>idade gestacional e a DPP são calculadas automaticamente</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong> e depois em <strong>Imprimir / PDF</strong> para entregar à paciente.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Dica:</strong> todos os laudos ficam salvos no histórico da paciente e podem ser consultados a qualquer momento.
+      </div>
+      <div class="campos">
+        <div class="campos-titulo">Tipos de laudo disponíveis</div>
+        <div class="campos-lista">
+          <span class="campo-tag">USG 1.º trimestre</span>
+          <span class="campo-tag">USG 2.º / 3.º trimestre</span>
+          <span class="campo-tag">USG morfológica</span>
+          <span class="campo-tag">USG transvaginal</span>
+          <span class="campo-tag">Colposcopia</span>
+          <span class="campo-tag">Hemograma</span>
+          <span class="campo-tag">Bioquímica</span>
+          <span class="campo-tag">Hormônios</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Recibo -->
+  <div class="secao" id="s8">
+    <div class="secao-header">
+      <div class="secao-num">8</div>
+      <span class="emoji">💰</span>
+      <h2>Registrar pagamento e emitir recibo</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Faturamento</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Novo Recibo</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Selecione a paciente, informe o <strong>valor</strong> e escolha a <strong>forma de pagamento</strong> (dinheiro, PIX, cartão, transferência, cheque).</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong> e depois em <strong>Imprimir</strong> para entregar o recibo.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Para ver o faturamento do mês: use o filtro de <strong>período</strong> na tela de Faturamento e veja o resumo por forma de pagamento.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Atenção:</strong> o SCWeb registra apenas pagamentos particulares. Não há integração com convênios ou planos de saúde.
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Lembretes -->
+  <div class="secao" id="s9">
+    <div class="secao-header">
+      <div class="secao-num">9</div>
+      <span class="emoji">🔔</span>
+      <h2>Configurar lembretes de retorno</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Lembretes</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto">Clique em <strong>Novo Lembrete</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Selecione a paciente, defina a <strong>data de retorno</strong> e adicione uma observação (ex: "Retorno pós-parto", "Resultado do exame").</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong>. O lembrete aparece na lista e pode ser consultado a qualquer momento.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Dica:</strong> use lembretes para pacientes que precisam retornar em data específica mas ainda não agendaram — assim ninguém cai no esquecimento.
+      </div>
+    </div>
+  </div>
+
+  <!-- Atalhos rápidos -->
+  <div class="secao">
+    <div class="secao-header">
+      <div class="secao-num" style="background:var(--verde)">★</div>
+      <h2>Situações do dia a dia</h2>
+    </div>
+    <div class="atalhos">
+      <div class="atalho-linha">
+        <div class="atalho-icone">🔍</div>
+        <div><strong>Buscar uma paciente rapidamente:</strong> use a barra de pesquisa no topo — funciona em qualquer tela.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">📋</div>
+        <div><strong>Ver histórico completo de uma paciente:</strong> Pacientes → clique no nome → todas as consultas, laudos e documentos aparecem na linha do tempo.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">🤰</div>
+        <div><strong>Painel de gestantes:</strong> acesse o <strong>Painel Gestantes</strong> para ver todas as grávidas em acompanhamento com semanas de gestação e DPP em tempo real.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">📆</div>
+        <div><strong>Reagendar uma consulta:</strong> Agenda → clique no agendamento → editar → mude a data → salvar.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">❌</div>
+        <div><strong>Cancelar uma consulta:</strong> Agenda → clique no agendamento → Cancelar → informe o motivo.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">👥</div>
+        <div><strong>Adicionar usuário (secretária):</strong> menu Usuários → Novo Usuário → defina o perfil (secretária vê agenda e sala de espera, mas não prescreve).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rodape">
+    <p>SCWeb &nbsp;·&nbsp; Guia Rápido do Médico &nbsp;·&nbsp; Versão 1.0</p>
+    <p style="margin-top:6px;">Dúvidas? Entre em contato com o suporte.</p>
+  </div>
+
+</div>
+</body>
+</html>
