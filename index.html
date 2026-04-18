@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso — SCWeb</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1a3a5c;
+    --azul-medio: #2a5f8f;
+    --azul-claro: #e8f1f8;
+    --cinza: #f5f6f7;
+    --borda: #dce3ea;
+    --texto: #1c2b3a;
+    --muted: #5a6e80;
+    --accent: #0e7fc0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--texto);
+    background: #fafbfc;
+    line-height: 1.8;
+  }
+
+  header {
+    background: var(--azul);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent);
+  }
+
+  header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  header .subtitulo {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  header .data-atualizacao {
+    display: inline-block;
+    margin-top: 1.2rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+
+  .aviso-legal {
+    background: #fff8e1;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem 1.5rem;
+    font-size: 0.88rem;
+    color: #78500a;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .indice {
+    background: var(--azul-claro);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .indice h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--azul);
+    margin-bottom: 0.8rem;
+    font-weight: normal;
+  }
+
+  .indice ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    column-count: 2;
+    column-gap: 2rem;
+  }
+
+  @media (max-width: 580px) {
+    .indice ol { column-count: 1; }
+  }
+
+  .indice li { margin-bottom: 0.3rem; }
+
+  .indice a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.88rem;
+  }
+
+  .indice a:hover { text-decoration: underline; }
+
+  section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 2rem;
+  }
+
+  .secao-titulo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--azul-claro);
+  }
+
+  .secao-numero {
+    background: var(--azul);
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .secao-titulo h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--azul);
+    font-weight: normal;
+  }
+
+  .clausula {
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--borda);
+    font-size: 0.95rem;
+    color: var(--texto);
+  }
+
+  .clausula strong {
+    color: var(--azul);
+    font-weight: 500;
+  }
+
+  .clausula .numero {
+    font-weight: 500;
+    color: var(--muted);
+    margin-right: 4px;
+    font-size: 0.85rem;
+  }
+
+  .destaque {
+    background: var(--azul-claro);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  ul.lista {
+    list-style: none;
+    padding-left: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  ul.lista li {
+    padding: 0.3rem 0 0.3rem 1.5rem;
+    position: relative;
+    font-size: 0.93rem;
+    border-bottom: 1px solid var(--cinza);
+  }
+
+  ul.lista li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .placeholder {
+    background: #fffbe6;
+    border: 1px dashed #d4a820;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.85rem;
+    color: #8a6400;
+    font-weight: 500;
+  }
+
+  .rodape-doc {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--azul-claro);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .assinatura {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+  }
+
+  .assinatura-bloco { text-align: center; }
+
+  .linha-assinatura {
+    width: 200px;
+    border-bottom: 1px solid var(--texto);
+    margin-bottom: 6px;
+    height: 32px;
+  }
+
+  @media print {
+    header { background: var(--azul) !important; -webkit-print-color-adjust: exact; }
+    .aviso-legal { display: none; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SCWeb</div>
+  <div class="subtitulo">Termos e Condições Gerais de Uso</div>
+  <div class="data-atualizacao">Versão 1.0 &nbsp;·&nbsp; <span class="placeholder">[DATA DE VIGÊNCIA]</span></div>
+</header>
+
+<div class="aviso-legal">
+  ⚠️ Este documento possui validade jurídica. Leia atentamente antes de utilizar a plataforma.
+</div>
+
+<div class="container">
+
+  <p style="font-size:0.95rem; margin-bottom:2rem; color:var(--muted);">
+    Estes Termos e Condições Gerais de Uso ("Termos") regulam a relação entre a
+    <strong><span class="placeholder">[RAZÃO SOCIAL]</span></strong>,
+    pessoa jurídica de direito privado, inscrita no CNPJ sob o n.º
+    <span class="placeholder">[CNPJ]</span>,
+    com sede em <span class="placeholder">[ENDEREÇO COMPLETO]</span>
+    ("SCWeb" ou "Empresa"), e os Usuários das plataformas SCWeb.
+    Ao acessar ou utilizar qualquer funcionalidade da plataforma, o Usuário declara ter lido,
+    compreendido e concordado com todos os termos aqui dispostos.
+  </p>
+
+  <div class="indice">
+    <h2>Sumário</h2>
+    <ol>
+      <li><a href="#s1">Definições</a></li>
+      <li><a href="#s2">Objeto e Serviços</a></li>
+      <li><a href="#s3">Acesso e Cadastro</a></li>
+      <li><a href="#s4">Período de Avaliação Gratuita</a></li>
+      <li><a href="#s5">Planos e Pagamentos</a></li>
+      <li><a href="#s6">Vigência e Cancelamento</a></li>
+      <li><a href="#s7">Obrigações do Usuário</a></li>
+      <li><a href="#s8">Obrigações da SCWeb</a></li>
+      <li><a href="#s9">Responsabilidades e Limitações</a></li>
+      <li><a href="#s10">Propriedade Intelectual</a></li>
+      <li><a href="#s11">Prontuário Eletrônico e Prescrição Digital</a></li>
+      <li><a href="#s12">Privacidade e LGPD</a></li>
+      <li><a href="#s13">Confidencialidade</a></li>
+      <li><a href="#s14">Alterações dos Termos</a></li>
+      <li><a href="#s15">Disposições Gerais</a></li>
+      <li><a href="#s16">Aceitação</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="secao-titulo">
+      <div class="secao-numero">1</div>
+      <h2>Definições</h2>
+    </div>
+    <div class="clausula">
+      Para fins destes Termos, as expressões abaixo têm os seguintes significados:
+      <ul class="lista" style="margin-top:0.8rem;">
+        <li><strong>Plataforma SCWeb:</strong> conjunto de soluções de software na modalidade SaaS (Software as a Service) desenvolvidas e licenciadas pela SCWeb para gestão de clínicas e profissionais de saúde.</li>
+        <li><strong>Contratante:</strong> pessoa física ou jurídica que celebra contrato de licença de uso com a SCWeb.</li>
+        <li><strong>Usuário:</strong> toda pessoa física que acessa e utiliza a Plataforma, podendo ser o próprio Contratante ou profissional por ele autorizado.</li>
+        <li><strong>Dados de Saúde:</strong> informações relativas a pacientes, prontuários, prescrições e demais registros clínicos tratados por meio da Plataforma, classificados como dados pessoais sensíveis nos termos do art. 5.º, II, da LGPD.</li>
+        <li><strong>Prontuário Eletrônico:</strong> conjunto de informações e documentos digitais relativos ao histórico clínico do paciente, mantido na Plataforma em conformidade com a Resolução CFM n.º 1.638/2002 e Resolução CFM n.º 1.821/2007.</li>
+        <li><strong>ICP-Brasil:</strong> Infraestrutura de Chaves Públicas Brasileira, sistema de certificação digital oficial para assinaturas com plena validade jurídica no território nacional.</li>
+        <li><strong>LGPD:</strong> Lei n.º 13.709/2018 — Lei Geral de Proteção de Dados Pessoais.</li>
+        <li><strong>Política de Privacidade:</strong> documento complementar que descreve como a SCWeb coleta, armazena e trata dados pessoais, disponível em <span class="placeholder">[URL DA POLÍTICA DE PRIVACIDADE]</span>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="secao-titulo">
+      <div class="secao-numero">2</div>
+      <h2>Objeto e Serviços</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">2.1</span> A SCWeb disponibiliza ao Contratante, mediante pagamento de assinatura, licença de uso não exclusiva, intransferível e revogável da Plataforma SCWeb, que compreende as seguintes funcionalidades principais:
+      <ul class="lista" style="margin-top:0.6rem;">
+        <li>Prontuário eletrônico de pacientes</li>
+        <li>Agendamento online de consultas</li>
+        <li>Prescrição digital com certificado ICP-Brasil</li>
+        <li>Envio de lembretes de consulta por WhatsApp</li>
+        <li>Gestão financeira e faturamento de atendimentos particulares</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">2.2</span> <strong>Limitação de escopo financeiro:</strong> o módulo financeiro da Plataforma destina-se exclusivamente ao faturamento de atendimentos particulares. A SCWeb não realiza integração com operadoras de planos de saúde, convênios médicos ou faturamento no padrão TISS/ANS. O Contratante que necessite de tais funcionalidades deverá buscar solução complementar.
+    </div>
+    <div class="clausula">
+      <span class="numero">2.3</span> A Plataforma é produto de uso padronizado (prateleira), não estando sujeita a customizações, integrações ou adaptações específicas, salvo se expressamente previstas em instrumento contratual separado.
+    </div>
+    <div class="clausula">
+      <span class="numero">2.4</span> A SCWeb poderá, a seu critério, ampliar, modificar ou descontinuar funcionalidades, notificando o Contratante com antecedência razoável sempre que a mudança impactar substancialmente o uso contratado.
+    </div>
+    <div class="clausula">
+      <span class="numero">2.5</span> A Plataforma SCWeb é destinada exclusivamente a <strong>clínicas médicas, consultórios e médicos autônomos</strong> legalmente habilitados a exercer atividades na área da saúde. É vedada sua aquisição ou utilização por pessoa ou empresa que não se enquadre nesse perfil.
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="secao-titulo">
+      <div class="secao-numero">3</div>
+      <h2>Acesso e Cadastro</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">3.1</span> Para utilizar a Plataforma, o Contratante deverá criar uma conta fornecendo informações verdadeiras, completas e atualizadas, sendo civil e criminalmente responsável pelo conteúdo informado.
+    </div>
+    <div class="clausula">
+      <span class="numero">3.2</span> As credenciais de acesso (login e senha) são pessoais e intransferíveis. O Usuário é o único responsável por sua guarda e sigilo, assim como por todas as operações realizadas sob sua conta. O compartilhamento de credenciais compromete a rastreabilidade de acesso a prontuários eletrônicos, exigida pelas normas do Conselho Federal de Medicina.
+    </div>
+    <div class="clausula">
+      <span class="numero">3.3</span> Em caso de acesso não autorizado, perda ou suspeita de comprometimento das credenciais, o Usuário deverá comunicar imediatamente a SCWeb pelos canais de suporte disponíveis.
+    </div>
+    <div class="clausula">
+      <span class="numero">3.4</span> O Contratante é responsável por gerenciar os acessos de seus colaboradores à Plataforma, devendo revogar imediatamente o acesso de qualquer pessoa desligada ou não mais autorizada.
+    </div>
+  </section>
+
+  <!-- 4 - Trial -->
+  <section id="s4">
+    <div class="secao-titulo">
+      <div class="secao-numero">4</div>
+      <h2>Período de Avaliação Gratuita</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">4.1</span> Ao realizar o primeiro cadastro na Plataforma, o Contratante terá acesso gratuito por <strong>15 (quinze) dias corridos</strong>, com acesso a todas as funcionalidades disponíveis ("Período de Avaliação").
+    </div>
+    <div class="clausula">
+      <span class="numero">4.2</span> Durante o Período de Avaliação não é exigida a inserção de dados de pagamento. Ao término do prazo, o Contratante deverá escolher um plano pago para continuar utilizando a Plataforma.
+    </div>
+    <div class="clausula">
+      <span class="numero">4.3</span> Caso o Contratante não efetue a assinatura ao final do Período de Avaliação, o acesso à Plataforma será suspenso automaticamente. Os dados inseridos durante a avaliação serão mantidos por até 30 (trinta) dias corridos, após os quais poderão ser permanentemente excluídos dos servidores.
+    </div>
+    <div class="clausula">
+      <span class="numero">4.4</span> O benefício do Período de Avaliação é limitado a um único cadastro por CNPJ ou CPF. A utilização de múltiplos cadastros para obter períodos gratuitos adicionais poderá resultar no cancelamento das contas envolvidas.
+    </div>
+    <div class="clausula">
+      <span class="numero">4.5</span> Os dados inseridos durante o Período de Avaliação são tratados com os mesmos padrões de segurança, privacidade e backup aplicáveis às contas pagas.
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="secao-titulo">
+      <div class="secao-numero">5</div>
+      <h2>Planos e Pagamentos</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">5.1</span> O acesso à Plataforma está condicionado ao pagamento de assinatura mensal ou anual, conforme plano escolhido pelo Contratante no momento da contratação, cujos valores estão descritos em <span class="placeholder">[URL DA PÁGINA DE PLANOS]</span>.
+    </div>
+    <div class="clausula">
+      <span class="numero">5.2</span> O pagamento será realizado de forma antecipada, por meio dos métodos disponibilizados na Plataforma (cartão de crédito, boleto bancário ou PIX, conforme aplicável).
+    </div>
+    <div class="clausula">
+      <span class="numero">5.3</span> Em caso de inadimplência, o acesso à Plataforma poderá ser suspenso automaticamente após o vencimento não quitado, sem prejuízo da incidência de multa de 2% (dois por cento) sobre o valor devido, acrescida de juros moratórios de 1% (um por cento) ao mês e correção monetária pelo IGP-M.
+    </div>
+    <div class="clausula">
+      <span class="numero">5.4</span> Os valores das assinaturas serão reajustados anualmente, na data de aniversário do contrato, pelo IGP-M ou, na sua ausência, pelo índice oficial que vier a substituí-lo.
+    </div>
+    <div class="clausula">
+      <span class="numero">5.5</span> <strong>Direito de arrependimento:</strong> nos termos do art. 49 do Código de Defesa do Consumidor, o Contratante poderá cancelar a assinatura no prazo de 7 (sete) dias corridos a partir da data da contratação, com reembolso integral dos valores pagos.
+    </div>
+    <div class="clausula">
+      <span class="numero">5.6</span> A SCWeb poderá alterar os preços dos planos mediante comunicação prévia ao Contratante com antecedência mínima de 30 (trinta) dias. Caso o Contratante não concorde com o novo valor, poderá cancelar a assinatura antes da vigência da alteração.
+    </div>
+    <div class="clausula">
+      <span class="numero">5.7</span> Tributos eventualmente criados ou modificados que impactem os custos da prestação poderão ser repassados ao Contratante, a fim de preservar o equilíbrio econômico-financeiro do contrato.
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="secao-titulo">
+      <div class="secao-numero">6</div>
+      <h2>Vigência e Cancelamento</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">6.1</span> O contrato de licença entra em vigor na data de confirmação do pagamento e permanece ativo pelo período contratado (mensal ou anual), renovando-se automaticamente nas mesmas condições ao término de cada ciclo, salvo cancelamento tempestivo.
+    </div>
+    <div class="clausula">
+      <span class="numero">6.2</span> O cancelamento poderá ser solicitado pelo Contratante a qualquer momento, por meio do e-mail <span class="placeholder">[EMAIL DE SUPORTE]</span> ou diretamente pela Plataforma, respeitando-se o prazo de aviso prévio de <span class="placeholder">[XX]</span> dias para que não haja cobrança do ciclo seguinte.
+    </div>
+    <div class="clausula">
+      <span class="numero">6.3</span> A SCWeb poderá encerrar o contrato a qualquer tempo, mediante comunicação prévia de 30 (trinta) dias, sem necessidade de justificativa.
+    </div>
+    <div class="clausula">
+      <span class="numero">6.4</span> O contrato poderá ser rescindido imediatamente, por qualquer das partes, nas seguintes hipóteses:
+      <ul class="lista" style="margin-top:0.5rem;">
+        <li>Descumprimento de obrigação contratual não sanada em até 10 (dez) dias após notificação</li>
+        <li>Insolvência, pedido de recuperação judicial ou falência da outra parte</li>
+        <li>Caso fortuito ou força maior que impeça a execução do contrato por mais de 30 (trinta) dias</li>
+        <li>Uso da Plataforma em desconformidade com a legislação vigente ou com estes Termos</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">6.5</span> Após o encerramento do contrato, a SCWeb disponibilizará ao Contratante, mediante solicitação, os dados armazenados em formato exportável por prazo a ser acordado entre as partes. Decorrido esse prazo, os dados poderão ser eliminados dos servidores, observadas as obrigações legais de retenção aplicáveis aos prontuários médicos.
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="secao-titulo">
+      <div class="secao-numero">7</div>
+      <h2>Obrigações do Usuário</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">7.1</span> O Usuário compromete-se a:
+      <ul class="lista" style="margin-top:0.5rem;">
+        <li>Utilizar a Plataforma exclusivamente para finalidades lícitas e compatíveis com o objeto contratado</li>
+        <li>Manter atualizados seus dados cadastrais e de cobrança</li>
+        <li>Não compartilhar suas credenciais de acesso com terceiros não autorizados</li>
+        <li>Não tentar acessar, copiar, modificar ou realizar engenharia reversa do código-fonte da Plataforma</li>
+        <li>Não utilizar a Plataforma para desenvolver produto concorrente ou similar</li>
+        <li>Comunicar imediatamente à SCWeb qualquer violação de segurança ou uso indevido de que tome conhecimento</li>
+        <li>Observar a legislação aplicável à área da saúde, incluindo normas do CFM e demais Conselhos Profissionais competentes</li>
+        <li>Não inserir na Plataforma conteúdo ilegal, difamatório, discriminatório ou que viole direitos de terceiros</li>
+        <li>Manter certificado digital ICP-Brasil válido para uso da funcionalidade de prescrição digital</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">7.2</span> O Contratante é responsável por todos os atos praticados pelos seus usuários na Plataforma, comprometendo-se a indenizar a SCWeb e terceiros por quaisquer danos decorrentes de uso irregular.
+    </div>
+    <div class="clausula">
+      <span class="numero">7.3</span> O Contratante deverá obter, por conta própria, todos os registros, licenças e autorizações necessários ao exercício de suas atividades perante os órgãos competentes.
+    </div>
+    <div class="clausula">
+      <span class="numero">7.4</span> <strong>Comunicações com pacientes via WhatsApp:</strong> o Contratante é integralmente responsável por garantir que os pacientes tenham autorizado o recebimento de comunicações por aplicativos de mensagem, nos termos da LGPD e demais normas aplicáveis. A SCWeb disponibiliza a funcionalidade de envio de lembretes, mas não verifica nem se responsabiliza pela obtenção desse consentimento.
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="secao-titulo">
+      <div class="secao-numero">8</div>
+      <h2>Obrigações da SCWeb</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">8.1</span> A SCWeb se compromete a:
+      <ul class="lista" style="margin-top:0.5rem;">
+        <li>Empregar esforços comercialmente razoáveis para manter a Plataforma disponível, comunicando indisponibilidades programadas com antecedência mínima de 24 (vinte e quatro) horas</li>
+        <li>Oferecer suporte técnico nos horários de <span class="placeholder">[HORÁRIO DE ATENDIMENTO]</span>, pelos canais <span class="placeholder">[CANAIS DE SUPORTE]</span></li>
+        <li>Adotar medidas técnicas de segurança adequadas aos padrões de mercado para proteção dos dados armazenados</li>
+        <li>Realizar backups automáticos diários dos dados da Plataforma, com retenção mínima de 30 (trinta) dias, para fins de recuperação em caso de falha grave</li>
+        <li>Tratar os dados dos Usuários e pacientes estritamente nos termos da Política de Privacidade e da LGPD</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">8.2</span> A SCWeb poderá realizar manutenções emergenciais sem aviso prévio quando necessário para preservar a segurança ou integridade da Plataforma.
+    </div>
+    <div class="clausula">
+      <span class="numero">8.3</span> Os backups referidos na cláusula 8.1 destinam-se à recuperação integral da Plataforma em cenários de falha grave. Solicitações de restauração pontual de registros específicos poderão ser atendidas a critério da SCWeb, mediante análise e eventual cobrança de taxa de serviço.
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="secao-titulo">
+      <div class="secao-numero">9</div>
+      <h2>Responsabilidades e Limitações</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">9.1</span> A Plataforma SCWeb é fornecida na condição em que se encontra, sem garantia de adequação a propósito específico, funcionamento ininterrupto ou ausência total de falhas.
+    </div>
+    <div class="clausula">
+      <span class="numero">9.2</span> A SCWeb não se responsabiliza por:
+      <ul class="lista" style="margin-top:0.5rem;">
+        <li>Indisponibilidades causadas por falhas de infraestrutura de terceiros, provedores de internet ou energia elétrica</li>
+        <li>Danos decorrentes de uso inadequado, negligente ou não autorizado da Plataforma pelo Contratante ou seus usuários</li>
+        <li>Decisões clínicas, administrativas ou financeiras tomadas com base nas informações processadas pela Plataforma</li>
+        <li>Informações incorretas inseridas pelo Contratante ou seus usuários</li>
+        <li>Ataques cibernéticos que a SCWeb não pudesse razoavelmente evitar adotando padrões de segurança adequados</li>
+        <li>Serviços prestados por terceiros integrados à Plataforma, incluindo provedores de infraestrutura em nuvem, certificadoras digitais e plataformas de mensageria</li>
+        <li>Falhas ou atrasos na entrega de mensagens via WhatsApp, decorrentes de limitações da plataforma Meta ou de operadoras de telecomunicações</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">9.3</span> <strong>Indisponibilidade durante atendimento:</strong> a SCWeb não garante disponibilidade ininterrupta da Plataforma. O Contratante e seus profissionais devem manter meios alternativos de registro clínico para situações de indisponibilidade, em conformidade com as obrigações éticas e legais aplicáveis ao exercício da medicina.
+    </div>
+    <div class="clausula">
+      <span class="numero">9.4</span> A responsabilidade da SCWeb, quando comprovada e decorrente exclusivamente de sua conduta, ficará limitada ao valor total pago pelo Contratante nos 12 (doze) meses anteriores ao evento gerador do dano. Em nenhuma hipótese a SCWeb responderá por danos indiretos, lucros cessantes, danos morais ou perda de oportunidade.
+    </div>
+    <div class="clausula">
+      <span class="numero">9.5</span> A SCWeb não é prestadora de serviços de saúde e não possui qualquer responsabilidade sobre os atendimentos, diagnósticos, prescrições ou tratamentos realizados pelos profissionais que utilizam a Plataforma.
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="secao-titulo">
+      <div class="secao-numero">10</div>
+      <h2>Propriedade Intelectual</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">10.1</span> Todos os direitos de propriedade intelectual sobre a Plataforma SCWeb — incluindo, sem limitação, código-fonte, interfaces, design, marcas, logotipos, banco de dados e documentação — pertencem exclusivamente à SCWeb e são protegidos pela legislação aplicável.
+    </div>
+    <div class="clausula">
+      <span class="numero">10.2</span> A contratação confere ao Usuário apenas uma licença de uso limitada, não exclusiva, intransferível e revogável, restrita ao período de vigência do contrato e às finalidades previstas nestes Termos.
+    </div>
+    <div class="clausula">
+      <span class="numero">10.3</span> É expressamente vedado ao Contratante e seus usuários reproduzir, copiar, adaptar, traduzir, sublicenciar, vender, ceder, alugar, fazer engenharia reversa ou desenvolver produto derivado da Plataforma, sob pena de rescisão imediata e responsabilização civil e criminal.
+    </div>
+    <div class="clausula">
+      <span class="numero">10.4</span> Os dados dos pacientes e informações clínicas inseridos na Plataforma pelo Contratante permanecem de titularidade do Contratante e de seus pacientes, cabendo à SCWeb apenas o papel de operadora de dados, nos termos da LGPD.
+    </div>
+  </section>
+
+  <!-- 11 - NOVO -->
+  <section id="s11">
+    <div class="secao-titulo">
+      <div class="secao-numero">11</div>
+      <h2>Prontuário Eletrônico e Prescrição Digital</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">11.1</span> <strong>Responsabilidade pelo prontuário:</strong> o médico ou a instituição de saúde (Contratante) é o único responsável legal pela guarda, integridade, sigilo e veracidade do prontuário eletrônico, nos termos da Resolução CFM n.º 1.638/2002 e demais normas aplicáveis. A SCWeb atua exclusivamente como custodiante tecnológico dos registros, sem qualquer responsabilidade sobre seu conteúdo clínico.
+    </div>
+    <div class="clausula">
+      <span class="numero">11.2</span> <strong>Prazo de retenção:</strong> em conformidade com a Resolução CFM n.º 1.821/2007, os prontuários de pacientes adultos devem ser mantidos por no mínimo <strong>20 (vinte) anos</strong> a partir do último registro. O Contratante é responsável por garantir a preservação dos dados pelo prazo legalmente exigível, inclusive solicitando exportação antes de eventual cancelamento do contrato.
+    </div>
+    <div class="clausula">
+      <span class="numero">11.3</span> <strong>Log de auditoria:</strong> a Plataforma mantém registro automático e imutável de todas as operações de acesso, criação e alteração de prontuários, incluindo identificação do usuário, data e hora. Esses registros integram o prontuário eletrônico e não podem ser excluídos pelo Contratante.
+    </div>
+    <div class="clausula">
+      <span class="numero">11.4</span> <strong>Prescrição digital com ICP-Brasil:</strong> a funcionalidade de prescrição digital utiliza certificado padrão ICP-Brasil, emitido por autoridade certificadora credenciada pelo ITI — Instituto Nacional de Tecnologia da Informação. A Plataforma é compatível com certificados em nuvem, como os fornecidos pelo Bird ID e similares.
+    </div>
+    <div class="clausula">
+      <span class="numero">11.5</span> O médico é integralmente responsável pela obtenção, manutenção e eventual revogação de seu certificado digital ICP-Brasil. A SCWeb não emite, renova nem revoga certificados. Prescrições assinadas com certificado expirado, revogado ou de titularidade diferente do profissional não possuem validade jurídica, sendo a responsabilidade exclusiva do signatário.
+    </div>
+    <div class="clausula">
+      <span class="numero">11.6</span> A SCWeb não se responsabiliza pelo conteúdo clínico das prescrições, diagnósticos ou orientações registrados na Plataforma, os quais são de responsabilidade exclusiva do profissional médico que os assina.
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section id="s12">
+    <div class="secao-titulo">
+      <div class="secao-numero">12</div>
+      <h2>Privacidade e LGPD</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">12.1</span> O tratamento de dados pessoais realizado pela SCWeb obedece rigorosamente à Lei n.º 13.709/2018 (LGPD) e à Política de Privacidade da SCWeb, disponível em <span class="placeholder">[URL DA POLÍTICA DE PRIVACIDADE]</span>.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.2</span> <strong>Dados pessoais sensíveis:</strong> os Dados de Saúde tratados por meio da Plataforma são classificados como dados pessoais sensíveis, nos termos do art. 5.º, II, da LGPD, e seu tratamento está sujeito ao regime diferenciado previsto no art. 11 da mesma Lei. A SCWeb trata esses dados exclusivamente com base nas hipóteses legais de tutela da saúde e execução de contrato de prestação de serviços de saúde, observando os princípios da finalidade, necessidade e minimização.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.3</span> Na relação de tratamento de dados de pacientes, a SCWeb atuará como <strong>Operadora</strong> e o Contratante como <strong>Controlador</strong>, cabendo ao Contratante:
+      <ul class="lista" style="margin-top:0.5rem;">
+        <li>Obter o consentimento dos pacientes para o tratamento de seus dados, quando exigido por lei</li>
+        <li>Garantir a legalidade da coleta e do armazenamento das informações fornecidas à SCWeb</li>
+        <li>Informar imediatamente à SCWeb qualquer solicitação de titular de dados relacionada aos serviços prestados pela Plataforma</li>
+        <li>Zelar pelo cumprimento das obrigações legais de proteção de dados aplicáveis à sua atividade</li>
+      </ul>
+    </div>
+    <div class="clausula">
+      <span class="numero">12.4</span> Os prontuários eletrônicos e registros clínicos armazenados na Plataforma pertencem ao paciente e ficam sob responsabilidade do Contratante, que deverá mantê-los pelo prazo mínimo de 20 (vinte) anos, nos termos da Resolução CFM n.º 1.821/2007.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.5</span> Em caso de incidente de segurança envolvendo dados pessoais, a SCWeb notificará o Contratante em até 24 (vinte e quatro) horas do conhecimento do fato, e ambas as partes cooperarão para mitigar seus efeitos e cumprir as obrigações legais perante a ANPD.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.6</span> <strong>Suboperadores:</strong> para a prestação dos serviços, a SCWeb poderá contratar suboperadores de dados, incluindo provedores de infraestrutura em nuvem, serviços de e-mail transacional, plataformas de mensageria (como a API oficial do WhatsApp — Meta) e processadores de pagamento. Todos os suboperadores são contratados com cláusulas de proteção de dados equivalentes às previstas nestes Termos e na LGPD. A lista atualizada de suboperadores estará disponível mediante solicitação pelo e-mail <span class="placeholder">[EMAIL DE SUPORTE]</span>.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.7</span> <strong>Encarregado de Dados (DPO):</strong> nos termos do art. 41 da LGPD, o Encarregado pelo tratamento de dados pessoais da SCWeb é <span class="placeholder">[NOME DO ENCARREGADO]</span>, que pode ser contactado pelo e-mail <span class="placeholder">[EMAIL DO ENCARREGADO]</span>.
+    </div>
+    <div class="clausula">
+      <span class="numero">12.8</span> Os dados poderão ser armazenados em servidores localizados no Brasil ou no exterior, adotando-se, neste último caso, as salvaguardas legais necessárias para a transferência internacional de dados previstas na LGPD.
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section id="s13">
+    <div class="secao-titulo">
+      <div class="secao-numero">13</div>
+      <h2>Confidencialidade</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">13.1</span> Cada parte compromete-se a manter em sigilo todas as informações confidenciais da outra parte acessadas em decorrência da relação contratual, abstendo-se de divulgá-las a terceiros sem autorização prévia e por escrito, salvo quando exigido por lei ou determinação judicial.
+    </div>
+    <div class="clausula">
+      <span class="numero">13.2</span> A obrigação de confidencialidade permanecerá válida por 2 (dois) anos após o encerramento do contrato.
+    </div>
+    <div class="clausula">
+      <span class="numero">13.3</span> Informações confidenciais poderão ser compartilhadas com colaboradores, consultores ou auditores das partes que necessitem delas para o cumprimento do contrato, desde que sujeitos a obrigações equivalentes de sigilo.
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section id="s14">
+    <div class="secao-titulo">
+      <div class="secao-numero">14</div>
+      <h2>Alterações dos Termos</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">14.1</span> A SCWeb reserva-se o direito de alterar estes Termos a qualquer tempo, notificando o Contratante por e-mail ou por aviso na própria Plataforma com antecedência mínima de 30 (trinta) dias antes da entrada em vigor das mudanças.
+    </div>
+    <div class="clausula">
+      <span class="numero">14.2</span> Caso o Contratante não concorde com as alterações, deverá manifestar sua discordância e solicitar o cancelamento antes da data de vigência da nova versão. A continuidade do uso da Plataforma após essa data será interpretada como aceitação das novas condições.
+    </div>
+    <div class="clausula">
+      <span class="numero">14.3</span> É responsabilidade do Contratante acompanhar eventuais atualizações dos Termos e demais políticas da SCWeb.
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section id="s15">
+    <div class="secao-titulo">
+      <div class="secao-numero">15</div>
+      <h2>Disposições Gerais</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">15.1</span> Se qualquer disposição destes Termos for considerada inválida ou inaplicável, as demais permanecerão em pleno vigor, sem que isso afete a validade do instrumento como um todo.
+    </div>
+    <div class="clausula">
+      <span class="numero">15.2</span> A tolerância de uma das partes quanto ao descumprimento de qualquer obrigação pela outra não implica novação, renúncia de direito ou precedente para situações futuras.
+    </div>
+    <div class="clausula">
+      <span class="numero">15.3</span> Nenhuma das partes será responsabilizada por atrasos ou falhas decorrentes de eventos de força maior ou caso fortuito, incluindo, sem limitação, desastres naturais, pandemias, atos governamentais ou falhas generalizadas de infraestrutura. Cessada a causa, as partes retomarão suas obrigações.
+    </div>
+    <div class="clausula">
+      <span class="numero">15.4</span> Em caso de conflito entre documentos, prevalecerá a seguinte ordem: (1) contrato específico assinado entre as partes; (2) estes Termos e Condições Gerais; (3) Política de Privacidade.
+    </div>
+    <div class="clausula">
+      <span class="numero">15.5</span> Estes Termos são regidos pelas leis da República Federativa do Brasil. As partes elegem o foro da Comarca de <span class="placeholder">[CIDADE/UF]</span> para dirimir quaisquer controvérsias decorrentes deste instrumento, renunciando a qualquer outro, por mais privilegiado que seja.
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section id="s16">
+    <div class="secao-titulo">
+      <div class="secao-numero">16</div>
+      <h2>Aceitação</h2>
+    </div>
+    <div class="clausula">
+      <span class="numero">16.1</span> AO UTILIZAR A PLATAFORMA SCWEB OU MARCAR O CAMPO DE ACEITE ELETRÔNICO, O CONTRATANTE DECLARA TER PLENA CAPACIDADE LEGAL, TER LIDO E COMPREENDIDO INTEGRALMENTE ESTES TERMOS E CONDIÇÕES GERAIS, CONCORDANDO COM TODOS OS SEUS DISPOSITIVOS.
+    </div>
+    <div class="clausula">
+      <span class="numero">16.2</span> A aceitação eletrônica realizada por meio de checkbox ou equivalente constitui forma válida de manifestação de vontade, com valor jurídico de título executivo extrajudicial, nos termos do art. 10 da Medida Provisória n.º 2.200-2/2001.
+    </div>
+
+    <div class="destaque" style="margin-top:1.5rem;">
+      Dúvidas? Entre em contato pelo e-mail <strong><span class="placeholder">[EMAIL DE SUPORTE]</span></strong> ou acesse <strong><span class="placeholder">[URL DO SITE]</span></strong>.
+    </div>
+  </section>
+
+  <div class="rodape-doc">
+    <p>SCWeb &nbsp;·&nbsp; <span class="placeholder">[RAZÃO SOCIAL]</span> &nbsp;·&nbsp; CNPJ <span class="placeholder">[CNPJ]</span></p>
+    <p style="margin-top:4px;">Versão 1.0 &nbsp;·&nbsp; Vigência a partir de <span class="placeholder">[DATA DE VIGÊNCIA]</span></p>
+
+    <div class="assinatura" style="margin-top:3rem;">
+      <div class="assinatura-bloco">
+        <div class="linha-assinatura"></div>
+        <p><span class="placeholder">[RAZÃO SOCIAL]</span></p>
+        <p style="color:var(--muted); font-size:0.8rem;">CONTRATADA — SCWeb</p>
+      </div>
+      <div class="assinatura-bloco">
+        <div class="linha-assinatura"></div>
+        <p>CONTRATANTE</p>
+        <p style="color:var(--muted); font-size:0.8rem;">Razão Social / Nome</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
