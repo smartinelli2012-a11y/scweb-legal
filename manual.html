@@ -317,6 +317,38 @@
     background: var(--azul-claro);
   }
 
+  /* Bird ID setup */
+  .birdid-setup {
+    background: var(--roxo-claro);
+    border: 2px solid #c4b5fd;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3.5rem;
+  }
+
+  .birdid-setup-header {
+    background: var(--roxo);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .birdid-setup-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+
+  .birdid-setup-header .badge-unico {
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
   /* Situações do dia */
   .atalhos-lista {
     background: white;
@@ -383,6 +415,7 @@
   <div class="indice">
     <h2>O que você encontra aqui</h2>
     <div class="indice-grid">
+      <a href="#birdid" class="indice-item"><span class="indice-num" style="background:var(--roxo)">✍</span> Configurar Bird ID</a>
       <a href="#s1" class="indice-item"><span class="indice-num">1</span> Cadastrar paciente</a>
       <a href="#s2" class="indice-item"><span class="indice-num">2</span> Agendar consulta</a>
       <a href="#s3" class="indice-item"><span class="indice-num">3</span> Sala de espera</a>
@@ -413,6 +446,51 @@
       <div class="fluxo-step">🧪 Solicitar exames</div>
       <div class="fluxo-arrow">→</div>
       <div class="fluxo-step">💰 Recibo</div>
+    </div>
+  </div>
+
+  <!-- Configuração Bird ID -->
+  <div class="birdid-setup" id="birdid">
+    <div class="birdid-setup-header">
+      <span style="font-size:1.4rem;">✍️</span>
+      <h2>Configuração inicial: Assinatura Digital (Bird ID)</h2>
+      <span class="badge-unico">Faça uma vez — dura 24h</span>
+    </div>
+    <div class="receita-passos" style="padding:1.5rem;">
+      <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.2rem;">
+        Para assinar receitas, atestados, laudos e solicitações de exames digitalmente, você precisa configurar o Bird ID uma vez por dia. O token fica ativo por <strong>24 horas</strong>.
+      </p>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">1</div>
+        <div class="passo-texto"><strong>Instale o app Bird ID</strong> no celular (disponível na App Store e Google Play) e adquira um certificado digital ICP-Brasil e-CPF pelo próprio app, caso ainda não tenha.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">2</div>
+        <div class="passo-texto">No SCWeb, clique no badge <strong>"BirdID não configurado"</strong> que aparece nas telas de documentos (receituário, atestados, laudos, solicitação de exames). Uma janela de configuração vai abrir.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">3</div>
+        <div class="passo-texto">Digite seu <strong>CPF</strong> e clique em <strong>"Buscar certificados"</strong>. O sistema localiza automaticamente os certificados ICP-Brasil vinculados ao seu CPF.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">4</div>
+        <div class="passo-texto"><strong>Selecione o certificado</strong> desejado na lista (geralmente aparece apenas um).</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">5</div>
+        <div class="passo-texto">Abra o app <strong>Bird ID no celular</strong> → toque em <strong>"Gerar OTP"</strong> → um código de 6 dígitos aparece na tela (válido por alguns segundos).</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">6</div>
+        <div class="passo-texto">Digite o <strong>código OTP</strong> no SCWeb e clique em <strong>"Autenticar"</strong>. O badge muda para verde: <em>BirdID ativo</em>.</div>
+      </div>
+      <div class="passo" style="margin-bottom:0;">
+        <div class="passo-num" style="background:var(--roxo-claro); color:var(--roxo);">7</div>
+        <div class="passo-texto">Pronto. A partir de agora, qualquer documento pode ser assinado com um clique — sem precisar repetir o processo até o próximo dia.</div>
+      </div>
+    </div>
+    <div class="dica" style="margin:0 1.5rem 1.5rem; background:#f5f3ff; border-color:var(--roxo); color:var(--roxo);">
+      <strong>Rotina recomendada:</strong> configure o Bird ID assim que chegar ao consultório, antes de iniciar os atendimentos. Assim a assinatura fica disponível para o dia todo sem interrupção.
     </div>
   </div>
 
