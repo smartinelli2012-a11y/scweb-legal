@@ -17,6 +17,8 @@
     --verde-claro: #e6f4ef;
     --amarelo: #92600a;
     --amarelo-claro: #fff8e1;
+    --roxo: #5b21b6;
+    --roxo-claro: #ede9fe;
     --cinza: #f5f6f7;
   }
 
@@ -97,7 +99,7 @@
 
   .indice-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 0.5rem;
   }
 
@@ -162,10 +164,7 @@
     white-space: nowrap;
   }
 
-  .fluxo-arrow {
-    opacity: 0.5;
-    font-size: 1rem;
-  }
+  .fluxo-arrow { opacity: 0.5; font-size: 1rem; }
 
   /* Seções */
   .secao {
@@ -203,9 +202,7 @@
     font-weight: normal;
   }
 
-  .secao-header .emoji {
-    font-size: 1.4rem;
-  }
+  .secao-header .emoji { font-size: 1.4rem; }
 
   /* Receita */
   .receita {
@@ -215,9 +212,7 @@
     overflow: hidden;
   }
 
-  .receita-passos {
-    padding: 1.5rem;
-  }
+  .receita-passos { padding: 1.5rem; }
 
   .passo {
     display: flex;
@@ -242,15 +237,8 @@
     margin-top: 2px;
   }
 
-  .passo-texto {
-    font-size: 0.95rem;
-    padding-top: 2px;
-  }
-
-  .passo-texto strong {
-    color: var(--azul);
-    font-weight: 500;
-  }
+  .passo-texto { font-size: 0.95rem; padding-top: 2px; }
+  .passo-texto strong { color: var(--azul); font-weight: 500; }
 
   /* Dica */
   .dica {
@@ -259,11 +247,42 @@
     padding: 0.75rem 1rem;
     font-size: 0.87rem;
     color: var(--amarelo);
-    margin: 1rem 1.5rem;
+    margin: 0 1.5rem 1rem;
     border-radius: 0 6px 6px 0;
   }
 
   .dica strong { font-weight: 600; }
+
+  /* Assinatura digital callout */
+  .assinatura-digital {
+    background: var(--roxo-claro);
+    border-left: 3px solid var(--roxo);
+    padding: 0.75rem 1rem;
+    font-size: 0.87rem;
+    color: var(--roxo);
+    margin: 0 1.5rem 1rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .assinatura-digital strong { font-weight: 600; }
+
+  /* Atalhos pills */
+  .atalhos-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem 1rem;
+  }
+
+  .atalho-pill {
+    background: var(--roxo-claro);
+    color: var(--roxo);
+    border: 1px solid #c4b5fd;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
 
   /* Campos */
   .campos {
@@ -281,11 +300,7 @@
     margin-bottom: 0.6rem;
   }
 
-  .campos-lista {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
+  .campos-lista { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .campo-tag {
     background: white;
@@ -302,8 +317,8 @@
     background: var(--azul-claro);
   }
 
-  /* Atalhos */
-  .atalhos {
+  /* Situações do dia */
+  .atalhos-lista {
     background: white;
     border: 1px solid var(--borda);
     border-radius: 12px;
@@ -327,16 +342,6 @@
     flex-shrink: 0;
     text-align: center;
     margin-top: 1px;
-  }
-
-  kbd {
-    background: var(--cinza);
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    padding: 1px 6px;
-    font-size: 0.8rem;
-    font-family: monospace;
-    color: var(--texto);
   }
 
   .rodape {
@@ -369,7 +374,7 @@
 </header>
 
 <div class="intro-bar">
-  Cada seção abaixo é uma tarefa completa. Siga os passos em ordem e não erra.
+  Cada seção é uma tarefa completa. Siga os passos em ordem e não erra.
 </div>
 
 <div class="container">
@@ -384,9 +389,10 @@
       <a href="#s4" class="indice-item"><span class="indice-num">4</span> Prontuário</a>
       <a href="#s5" class="indice-item"><span class="indice-num">5</span> Receita médica</a>
       <a href="#s6" class="indice-item"><span class="indice-num">6</span> Atestado</a>
-      <a href="#s7" class="indice-item"><span class="indice-num">7</span> Laudos e exames</a>
-      <a href="#s8" class="indice-item"><span class="indice-num">8</span> Recibo e pagamento</a>
-      <a href="#s9" class="indice-item"><span class="indice-num">9</span> Lembretes</a>
+      <a href="#s7" class="indice-item"><span class="indice-num">7</span> Solicitar exames</a>
+      <a href="#s8" class="indice-item"><span class="indice-num">8</span> Registrar laudos</a>
+      <a href="#s9" class="indice-item"><span class="indice-num">9</span> Recibo e pagamento</a>
+      <a href="#s10" class="indice-item"><span class="indice-num">10</span> Lembretes</a>
     </div>
   </div>
 
@@ -394,7 +400,7 @@
   <div class="fluxo">
     <h2>Fluxo típico de um dia de atendimento</h2>
     <div class="fluxo-steps">
-      <div class="fluxo-step">📋 Cadastrar paciente</div>
+      <div class="fluxo-step">📋 Cadastrar</div>
       <div class="fluxo-arrow">→</div>
       <div class="fluxo-step">📅 Agendar</div>
       <div class="fluxo-arrow">→</div>
@@ -403,6 +409,8 @@
       <div class="fluxo-step">📝 Prontuário</div>
       <div class="fluxo-arrow">→</div>
       <div class="fluxo-step">💊 Receita</div>
+      <div class="fluxo-arrow">→</div>
+      <div class="fluxo-step">🧪 Solicitar exames</div>
       <div class="fluxo-arrow">→</div>
       <div class="fluxo-step">💰 Recibo</div>
     </div>
@@ -439,7 +447,7 @@
         </div>
       </div>
       <div class="dica">
-        <strong>Dica:</strong> Paciente que já veio antes? Pesquise pelo nome na barra de busca antes de cadastrar para evitar duplicatas.
+        <strong>Dica:</strong> Pesquise pelo nome antes de cadastrar para evitar duplicatas.
       </div>
       <div class="campos">
         <div class="campos-titulo">Campos do cadastro</div>
@@ -492,7 +500,7 @@
         </div>
       </div>
       <div class="dica">
-        <strong>Lembrete automático:</strong> o sistema envia mensagem de lembrete pelo WhatsApp 1 dia antes da consulta — nenhuma ação necessária da sua parte.
+        <strong>Lembrete automático:</strong> o sistema envia mensagem de lembrete pelo WhatsApp 1 dia antes da consulta — nenhuma ação necessária.
       </div>
     </div>
   </div>
@@ -524,7 +532,7 @@
         </div>
       </div>
       <div class="dica">
-        <strong>Dica:</strong> A ordem na sala de espera reflete a ordem de chegada. A recepção e o médico veem a mesma tela em tempo real.
+        <strong>Dica:</strong> A recepção e o médico veem a mesma tela em tempo real — sem necessidade de ligar ou chamar no corredor.
       </div>
     </div>
   </div>
@@ -540,7 +548,7 @@
       <div class="receita-passos">
         <div class="passo">
           <div class="passo-num">1</div>
-          <div class="passo-texto">Acesse o <strong>Prontuário</strong> pela Sala de Espera (clique no nome da paciente) ou pelo menu Pacientes → selecione a paciente → Prontuário.</div>
+          <div class="passo-texto">Acesse o prontuário pela <strong>Sala de Espera</strong> (clique no nome da paciente) ou por <strong>Pacientes → selecione a paciente → Prontuário</strong>.</div>
         </div>
         <div class="passo">
           <div class="passo-num">2</div>
@@ -560,11 +568,11 @@
         </div>
         <div class="passo">
           <div class="passo-num">6</div>
-          <div class="passo-texto">Clique em <strong>Salvar</strong>. O prontuário fica no histórico da paciente para sempre.</div>
+          <div class="passo-texto">Clique em <strong>Salvar</strong>. O registro fica no histórico da paciente permanentemente.</div>
         </div>
       </div>
       <div class="dica">
-        <strong>Importante:</strong> o prontuário é de sua responsabilidade legal. Pelo CFM, deve ser mantido por no mínimo 20 anos. O sistema guarda tudo automaticamente — não apague registros.
+        <strong>Importante:</strong> o prontuário é de sua responsabilidade legal (CFM). O sistema guarda tudo automaticamente — nunca apague registros.
       </div>
       <div class="campos">
         <div class="campos-titulo">Campos do prontuário</div>
@@ -611,15 +619,11 @@
         </div>
         <div class="passo">
           <div class="passo-num">5</div>
-          <div class="passo-texto">Clique em <strong>Assinar com Bird ID</strong>. O app Bird ID abre no celular — confirme a assinatura.</div>
-        </div>
-        <div class="passo">
-          <div class="passo-num">6</div>
-          <div class="passo-texto">Após assinado, clique em <strong>Imprimir</strong> ou envie o PDF diretamente para a paciente.</div>
+          <div class="passo-texto">Clique em <strong>Imprimir</strong> para imprimir em papel, ou <strong>Assinar com Bird ID</strong> para gerar PDF com assinatura digital ICP-Brasil.</div>
         </div>
       </div>
-      <div class="dica">
-        <strong>Bird ID:</strong> é o app do seu certificado digital ICP-Brasil. Precisa estar instalado no celular e com certificado válido para assinar. Sem assinatura, a receita não tem validade jurídica.
+      <div class="assinatura-digital">
+        <strong>✍️ Assinatura digital disponível:</strong> clique em "Assinar com Bird ID" — confirme no app Bird ID no celular e o sistema gera o PDF assinado automaticamente. Válido juridicamente como receita digital (Lei 13.787/2018).
       </div>
     </div>
   </div>
@@ -629,13 +633,13 @@
     <div class="secao-header">
       <div class="secao-num">6</div>
       <span class="emoji">📄</span>
-      <h2>Emitir atestado médico</h2>
+      <h2>Emitir atestado ou declaração</h2>
     </div>
     <div class="receita">
       <div class="receita-passos">
         <div class="passo">
           <div class="passo-num">1</div>
-          <div class="passo-texto">No menu lateral, clique em <strong>Documentos</strong> → <strong>Atestados</strong>.</div>
+          <div class="passo-texto">No menu lateral, clique em <strong>Documentos → Atestados</strong>.</div>
         </div>
         <div class="passo">
           <div class="passo-num">2</div>
@@ -647,22 +651,102 @@
         </div>
         <div class="passo">
           <div class="passo-num">4</div>
-          <div class="passo-texto">Para declarações de comparecimento ou documentos livres, escolha <strong>Declaração</strong> e digite o texto.</div>
+          <div class="passo-texto">Para declaração de comparecimento ou texto livre, escolha <strong>Declaração</strong> e digite o conteúdo.</div>
         </div>
         <div class="passo">
           <div class="passo-num">5</div>
-          <div class="passo-texto">Clique em <strong>Salvar</strong> e depois em <strong>Imprimir</strong>.</div>
+          <div class="passo-texto">Clique em <strong>Imprimir</strong> ou <strong>Assinar com Bird ID</strong> para versão digital.</div>
+        </div>
+      </div>
+      <div class="assinatura-digital">
+        <strong>✍️ Assinatura digital disponível:</strong> atestados e declarações também podem ser assinados digitalmente com Bird ID — gera PDF com validade jurídica, sem necessidade de impressão.
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Solicitar exames -->
+  <div class="secao" id="s7">
+    <div class="secao-header">
+      <div class="secao-num">7</div>
+      <span class="emoji">🧪</span>
+      <h2>Solicitar exames</h2>
+    </div>
+    <div class="receita">
+      <div class="receita-passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-texto">No prontuário da paciente, clique na aba <strong>Solicitar Exames</strong> (ou acesse pelo menu lateral).</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-texto"><strong>Use um atalho de perfil</strong> para pré-marcar um conjunto de exames de uma vez — clique no botão do perfil desejado e todos os exames correspondentes são marcados automaticamente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-texto">Ajuste a lista: marque ou desmarque exames individuais nas categorias. Use a <strong>barra de filtro</strong> para encontrar um exame específico rapidamente.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-texto">Para pedir um exame fora da lista padrão, use o campo <strong>Exames Adicionais</strong> e digite o nome — ele é adicionado à solicitação.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">5</div>
+          <div class="passo-texto">Informe o <strong>CID</strong> e o <strong>diagnóstico</strong> se quiser que apareçam no impresso (opcional).</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">6</div>
+          <div class="passo-texto">Clique em <strong>Imprimir Solicitação</strong>. O sistema separa automaticamente os exames em duas folhas: <strong>laboratoriais</strong> e <strong>de imagem</strong>.</div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">7</div>
+          <div class="passo-texto">A solicitação fica salva no <strong>Histórico</strong> da paciente — você pode reimprimir ou assinar qualquer solicitação anterior a qualquer momento.</div>
+        </div>
+      </div>
+      <div class="dica">
+        <strong>Atalhos disponíveis:</strong>
+      </div>
+      <div class="atalhos-pills">
+        <span class="atalho-pill">Rotina Gineco &lt;40</span>
+        <span class="atalho-pill">Rotina Gineco &gt;40</span>
+        <span class="atalho-pill">Climatério</span>
+        <span class="atalho-pill">Pré-Natal</span>
+        <span class="atalho-pill">Trombofilias</span>
+        <span class="atalho-pill">Mastologia</span>
+        <span class="atalho-pill">Osteopenia</span>
+        <span class="atalho-pill">Implantes</span>
+      </div>
+      <div class="dica" style="margin-top:0;">
+        <strong>Atalho personalizado:</strong> monte sua própria seleção de exames e clique em "Salvar Seleção como Atalho" — ele fica disponível para todas as consultas futuras.
+      </div>
+      <div class="assinatura-digital">
+        <strong>✍️ Assinatura digital disponível:</strong> após imprimir, clique em "Assinar com Bird ID" para gerar a solicitação em PDF com assinatura ICP-Brasil — dispensando papel em alguns laboratórios.
+      </div>
+      <div class="campos">
+        <div class="campos-titulo">Categorias de exame disponíveis</div>
+        <div class="campos-lista">
+          <span class="campo-tag">Hemograma e Coagulação</span>
+          <span class="campo-tag">Bioquímica</span>
+          <span class="campo-tag">Hormônios</span>
+          <span class="campo-tag">Sorologias</span>
+          <span class="campo-tag">Gestação</span>
+          <span class="campo-tag">Exames Vaginais</span>
+          <span class="campo-tag">Trombofilias</span>
+          <span class="campo-tag">Marcadores Tumorais</span>
+          <span class="campo-tag">Exames de Imagem</span>
+          <span class="campo-tag">Cardiológicos</span>
+          <span class="campo-tag">Urina e Fezes</span>
+          <span class="campo-tag">Outros</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 7. Laudos -->
-  <div class="secao" id="s7">
+  <!-- 8. Registrar laudos -->
+  <div class="secao" id="s8">
     <div class="secao-header">
-      <div class="secao-num">7</div>
+      <div class="secao-num">8</div>
       <span class="emoji">🔬</span>
-      <h2>Registrar laudos e exames</h2>
+      <h2>Registrar laudos e resultados de exames</h2>
     </div>
     <div class="receita">
       <div class="receita-passos">
@@ -676,11 +760,11 @@
         </div>
         <div class="passo">
           <div class="passo-num">3</div>
-          <div class="passo-texto">Selecione a paciente e preencha os campos do exame.</div>
+          <div class="passo-texto">Selecione a <strong>paciente</strong> e preencha os campos do resultado.</div>
         </div>
         <div class="passo">
           <div class="passo-num">4</div>
-          <div class="passo-texto">Para USG obstétrica: informe as medidas (CCN, DBP, CA, CF…) — a <strong>idade gestacional e a DPP são calculadas automaticamente</strong>.</div>
+          <div class="passo-texto">Para <strong>USG obstétrica</strong>: informe as medidas (CCN, DBP, CA, CF…) — a idade gestacional e a DPP são calculadas automaticamente.</div>
         </div>
         <div class="passo">
           <div class="passo-num">5</div>
@@ -688,7 +772,10 @@
         </div>
       </div>
       <div class="dica">
-        <strong>Dica:</strong> todos os laudos ficam salvos no histórico da paciente e podem ser consultados a qualquer momento.
+        <strong>Dica:</strong> todos os laudos ficam salvos no histórico da paciente e podem ser consultados e reimpressos a qualquer momento.
+      </div>
+      <div class="assinatura-digital">
+        <strong>✍️ Assinatura digital disponível:</strong> laudos também podem ser assinados com Bird ID — útil para entregar à paciente em formato digital com validade jurídica.
       </div>
       <div class="campos">
         <div class="campos-titulo">Tipos de laudo disponíveis</div>
@@ -706,10 +793,10 @@
     </div>
   </div>
 
-  <!-- 8. Recibo -->
-  <div class="secao" id="s8">
+  <!-- 9. Recibo -->
+  <div class="secao" id="s9">
     <div class="secao-header">
-      <div class="secao-num">8</div>
+      <div class="secao-num">9</div>
       <span class="emoji">💰</span>
       <h2>Registrar pagamento e emitir recibo</h2>
     </div>
@@ -725,7 +812,7 @@
         </div>
         <div class="passo">
           <div class="passo-num">3</div>
-          <div class="passo-texto">Selecione a paciente, informe o <strong>valor</strong> e escolha a <strong>forma de pagamento</strong> (dinheiro, PIX, cartão, transferência, cheque).</div>
+          <div class="passo-texto">Selecione a paciente, informe o <strong>valor</strong> e escolha a <strong>forma de pagamento</strong>.</div>
         </div>
         <div class="passo">
           <div class="passo-num">4</div>
@@ -737,15 +824,16 @@
         </div>
       </div>
       <div class="dica">
-        <strong>Atenção:</strong> o SCWeb registra apenas pagamentos particulares. Não há integração com convênios ou planos de saúde.
+        <strong>Formas de pagamento:</strong> dinheiro, PIX, cartão de crédito, cartão de débito, transferência e cheque.<br>
+        <strong>Atenção:</strong> o SCWeb registra apenas pagamentos particulares — não há integração com convênios.
       </div>
     </div>
   </div>
 
-  <!-- 9. Lembretes -->
-  <div class="secao" id="s9">
+  <!-- 10. Lembretes -->
+  <div class="secao" id="s10">
     <div class="secao-header">
-      <div class="secao-num">9</div>
+      <div class="secao-num">10</div>
       <span class="emoji">🔔</span>
       <h2>Configurar lembretes de retorno</h2>
     </div>
@@ -774,20 +862,20 @@
     </div>
   </div>
 
-  <!-- Atalhos rápidos -->
+  <!-- Situações do dia a dia -->
   <div class="secao">
     <div class="secao-header">
-      <div class="secao-num" style="background:var(--verde)">★</div>
+      <div class="secao-num" style="background:var(--verde);">★</div>
       <h2>Situações do dia a dia</h2>
     </div>
-    <div class="atalhos">
+    <div class="atalhos-lista">
       <div class="atalho-linha">
         <div class="atalho-icone">🔍</div>
         <div><strong>Buscar uma paciente rapidamente:</strong> use a barra de pesquisa no topo — funciona em qualquer tela.</div>
       </div>
       <div class="atalho-linha">
         <div class="atalho-icone">📋</div>
-        <div><strong>Ver histórico completo de uma paciente:</strong> Pacientes → clique no nome → todas as consultas, laudos e documentos aparecem na linha do tempo.</div>
+        <div><strong>Ver histórico completo de uma paciente:</strong> Pacientes → clique no nome → todas as consultas, laudos, solicitações e documentos aparecem na linha do tempo.</div>
       </div>
       <div class="atalho-linha">
         <div class="atalho-icone">🤰</div>
@@ -800,6 +888,10 @@
       <div class="atalho-linha">
         <div class="atalho-icone">❌</div>
         <div><strong>Cancelar uma consulta:</strong> Agenda → clique no agendamento → Cancelar → informe o motivo.</div>
+      </div>
+      <div class="atalho-linha">
+        <div class="atalho-icone">✍️</div>
+        <div><strong>Assinatura digital em qualquer documento:</strong> receitas, atestados, laudos e solicitações de exames podem ser assinados com Bird ID. Abra o app Bird ID no celular antes de atender para já estar conectado.</div>
       </div>
       <div class="atalho-linha">
         <div class="atalho-icone">👥</div>
